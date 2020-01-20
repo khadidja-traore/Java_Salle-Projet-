@@ -13,7 +13,23 @@ public class StrategieSimple implements Strategy {
 	}
 	
 	public Vecteur2D deplacement(Personne p){
-		Vecteur2D v = new Vecteur2D(11,20);
+		
+			
+			return new Vecteur2D (60,70);
+		
+		
+	}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+/*		Vecteur2D v = new Vecteur2D(11,20);
 		p.setDir(v);
 		
 		// creation d une droite y = ax+b
@@ -48,7 +64,8 @@ public class StrategieSimple implements Strategy {
 		
 		
 		return v;
+*/
 		
-	}
+	
 
 }
