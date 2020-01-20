@@ -58,20 +58,21 @@ public class TestSalle {
 	    //test constructeur
 	    int cote = 10;
         Salle salle1 = new Salle(terrain, cote);
+        StrategieSimple str = new StrategieSimple(salle1);
+      
+        Personne p = new Personne (50,50,str);
+        VueParticule vuep = new VueParticule(p);
+        p.setRandomDirectionAndVitesse();
+        mphys.add(p);
         
         
-       // StrategieSimple str = new StrategieSimple(salle1);
-       // Personne pers = new Personne(100,100,str);
-        //PersonneView perview = new PersonneView(pers);
+        System.out.println(p.getRayon());
         
-
-
-        
-        CerclePhysique particule = new CerclePhysique(50, 50, 4, 1);
+ /*       CerclePhysique particule = new CerclePhysique(50, 50, 4, 1);
         VueParticule vuep = new VueParticule(particule);
         particule.setRandomDirectionAndVitesse();
         mphys.add(particule);
-
+*/
 
 	    //Test affichage de la salle 
 	        
@@ -92,30 +93,39 @@ public class TestSalle {
 	                    }
 
 			}
-			
 			for(int iter = 0; iter<2000; iter++) {
-            // mouvements
+				
+		        System.out.println(p.getTraget());
 
+				p.move();
             mgraph.add(vuep);
             mphys.updateMovablePosition();
-
-
-            
-            // mouvement 
             // rafraichissement de l'affichage
-
-
             mgraph.repaint();      
             // temporisation (sinon, on ne voit rien)
             Thread.sleep(50);
-            vuep.move(particule,null);
-        
+            vuep.move(p,null);
+
             if(!mphys.isMove()) {
                 System.out.println("plus de mouvement => sortie");
                 break;
             }
         }
         
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
         //test accesseur par des coordonnées
         System.out.println(salle1.get(10,11));
         
