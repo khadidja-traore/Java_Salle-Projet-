@@ -20,7 +20,7 @@ public class Personne extends CerclePhysique implements Strategy {
 		id = cpt;
 		cpt++;
 		this.target = new Vecteur2D (x,y);
-		this.str = null;
+		this.str = str;
 	
 	}
 
