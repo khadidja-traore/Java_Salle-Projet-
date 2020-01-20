@@ -82,12 +82,38 @@ public class TestSalle {
 	                         switch(salle1.get(i, j)){
 		                         case Mur:
 		                         //System.out.println(i*cote +" "+ j*cote+" "+ cote+" "+ cote);
-		                         Mur m = new Mur(i*cote, j*cote, cote, cote);
-		                         
-		
-		                         MurView mv = new MurView(m);
-		                         mphys.add(m);
-		                         mgraph.add(mv);
+		                        Mur m = new Mur(i*cote, j*cote, cote, cote);
+	                         MurView mv = new MurView(m);
+	                         mphys.add(m);
+	                         mgraph.add(mv);
+	                         break;
+	                         
+	                         case Safe : 
+	                        	 Mur m2 = new Mur(i*cote, j*cote, cote, cote);
+	                        	 TerrainView safev = new TerrainView (i*cote, j*cote, cote, cote, Color.GREEN);
+	                        	 mphys.add(m2);
+	                        	 mgraph.add(safev);
+	                        	 break;
+	                        	 
+	                         case Scene :
+	                        	 Mur m3 = new Mur(i*cote, j*cote, cote, cote);
+	                        	 TerrainView scenev = new TerrainView (i*cote, j*cote, cote, cote, Color.BLUE);
+	                        	 mphys.add(m3);
+	                        	 mgraph.add(scenev);
+	                        	 break;
+	                        	 
+	                        	 
+	                         case Vide :
+	                        	 Mur m4 = new Mur(i*cote, j*cote, cote, cote);
+	                        	 TerrainView videv = new TerrainView (i*cote, j*cote, cote, cote, Color.BLUE);
+	                        	 mphys.add(m4);
+	                        	 mgraph.add(videv);
+	                        	 break;
+	                         default: 
+	                        	  Mur m5 = new Mur(i*cote, j*cote, cote, cote);
+	                        	  TerrainView exitv = new TerrainView (i*cote, j*cote, cote, cote, Color.MAGENTA);
+	                        	  mphys.add(m5);
+	                        	  mgraph.add(exitv);
     
 	                         }
 	                    }
